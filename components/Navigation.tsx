@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import Logo from "./Logo";
 import { useLang } from "./LanguageProvider";
 
 const navLinks = ["services", "about", "howItWorks", "technologies", "contact"] as const;
@@ -25,7 +27,13 @@ export default function Navigation() {
   }, []);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If on subpage, navigate home first
+      window.location.href = `/#${id}`;
+    }
     setMobileOpen(false);
   };
 
@@ -40,17 +48,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 group"
-          >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-shadow">
-              <Zap size={16} className="text-white fill-white" />
-            </div>
-            <span className="font-bold text-lg text-white tracking-tight">
-              Sprint<span className="text-indigo-400">PMC</span>
-            </span>
-          </button>
+          <Link href="/" aria-label="SprintPMC — strona główna">
+            <Logo height={38} />
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">

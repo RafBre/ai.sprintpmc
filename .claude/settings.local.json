@@ -17,7 +17,9 @@
       "Bash(npx next *)",
       "Bash(git commit -m 'fix: resolve TypeScript union type error and add autoprefixer dep *)",
       "Bash(git commit -m 'docs: add README with Vercel deploy instructions *)",
-      "Bash(git commit -m 'fix: plural forms PL/EN, email info@, remove social icons, single dashes *)"
+      "Bash(git commit -m 'fix: plural forms PL/EN, email info@, remove social icons, single dashes *)",
+      "WebFetch(domain:sprintpmc.com)",
+      "Bash(git commit -m 'feat: logo SVG, email API \\(Resend\\), service subpages, partners bar, legal pages, tech redesign, 2-figure About, better step SVGs *)"
     ]
   }
 }

@@ -3,60 +3,143 @@
 import { Check } from "lucide-react";
 import { useLang } from "./LanguageProvider";
 
-function AvatarIllustration() {
+function PersonFigure({
+  x,
+  delay,
+  label,
+  badge1,
+  badge2,
+  flip,
+}: {
+  x: number;
+  delay: string;
+  label: string;
+  badge1: string;
+  badge2: string;
+  flip?: boolean;
+}) {
+  const dir = flip ? -1 : 1;
   return (
-    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      {/* Background circle */}
-      <circle cx="200" cy="200" r="180" fill="rgba(79,70,229,0.08)" stroke="rgba(99,102,241,0.2)" strokeWidth="1" />
-      <circle cx="200" cy="200" r="140" fill="rgba(79,70,229,0.06)" stroke="rgba(99,102,241,0.15)" strokeWidth="1" />
-
-      {/* Person silhouette */}
-      <circle cx="200" cy="155" r="55" fill="rgba(99,102,241,0.25)" stroke="rgba(139,92,246,0.4)" strokeWidth="1.5" />
-      <path d="M90 330 C90 270 140 240 200 240 C260 240 310 270 310 330" fill="rgba(99,102,241,0.2)" stroke="rgba(139,92,246,0.3)" strokeWidth="1.5" />
-
-      {/* Floating tech badges */}
+    <g>
+      {/* Body float animation */}
       <g>
-        {/* n8n badge */}
-        <rect x="20" y="140" width="80" height="32" rx="16" fill="rgba(30,27,75,0.9)" stroke="rgba(99,102,241,0.5)" strokeWidth="1" />
-        <text x="60" y="161" textAnchor="middle" fill="rgba(165,180,252,1)" fontSize="12" fontWeight="600">n8n</text>
-        <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="3s" repeatCount="indefinite" additive="sum" />
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values={`${x},0; ${x},${-10 * dir}; ${x},0`}
+          dur="4s"
+          begin={delay}
+          repeatCount="indefinite"
+          additive="replace"
+        />
+        {/* Head */}
+        <circle cx="0" cy="0" r="22" fill="url(#headGrad)" />
+        {/* Neck */}
+        <rect x="-6" y="20" width="12" height="14" rx="4" fill="#4f46e5" />
+        {/* Body */}
+        <path d="M-30 34 Q-30 56 -24 80 L24 80 Q30 56 30 34 Q20 28 0 28 Q-20 28 -30 34Z" fill="url(#bodyGrad)" />
+        {/* Left arm */}
+        <path
+          d={flip ? "M-30 42 Q-55 50 -60 70" : "M-30 42 Q-50 60 -48 82"}
+          stroke="#6366f1" strokeWidth="8" strokeLinecap="round" fill="none"
+        />
+        {/* Right arm */}
+        <path
+          d={flip ? "M30 42 Q55 36 62 20" : "M30 42 Q50 60 48 82"}
+          stroke="#6366f1" strokeWidth="8" strokeLinecap="round" fill="none"
+        />
+        {/* Legs */}
+        <path d="M-16 80 Q-18 110 -14 130" stroke="#4338ca" strokeWidth="10" strokeLinecap="round" fill="none" />
+        <path d="M16 80 Q18 110 14 130" stroke="#4338ca" strokeWidth="10" strokeLinecap="round" fill="none" />
+        {/* Shoes */}
+        <ellipse cx="-14" cy="132" rx="12" ry="6" fill="#3730a3" />
+        <ellipse cx="14" cy="132" rx="12" ry="6" fill="#3730a3" />
+        {/* Laptop/pointing hand detail */}
+        {flip ? (
+          <path d="M44 16 L68 4 L70 8 L46 20Z" fill="#22d3ee" opacity="0.8" />
+        ) : (
+          <g>
+            <rect x="36" y="74" width="28" height="20" rx="3" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
+            <rect x="34" y="94" width="32" height="3" rx="1.5" fill="#4f46e5" />
+            <rect x="39" y="77" width="22" height="14" rx="2" fill="#312e81" opacity="0.8" />
+          </g>
+        )}
+        {/* Face features */}
+        <circle cx="-7" cy="-4" r="3" fill="white" opacity="0.9" />
+        <circle cx="7" cy="-4" r="3" fill="white" opacity="0.9" />
+        <circle cx="-6" cy="-3" r="1.5" fill="#312e81" />
+        <circle cx="8" cy="-3" r="1.5" fill="#312e81" />
+        <path d="M-6 8 Q0 12 6 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
       </g>
 
-      <g>
-        {/* OpenAI badge */}
-        <rect x="300" y="100" width="90" height="32" rx="16" fill="rgba(30,27,75,0.9)" stroke="rgba(99,102,241,0.5)" strokeWidth="1" />
-        <text x="345" y="121" textAnchor="middle" fill="rgba(165,180,252,1)" fontSize="11" fontWeight="600">OpenAI</text>
-        <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="3.5s" repeatCount="indefinite" additive="sum" />
+      {/* Floating badge 1 */}
+      <g transform={`translate(${x + (flip ? -110 : 60)}, -60)`}>
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values={`${x + (flip ? -110 : 60)},-60; ${x + (flip ? -110 : 60)},-72; ${x + (flip ? -110 : 60)},-60`}
+          dur="3s"
+          begin={delay}
+          repeatCount="indefinite"
+        />
+        <rect x="0" y="0" width="80" height="26" rx="13" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
+        <text x="40" y="17" textAnchor="middle" fill="#a5b4fc" fontSize="10" fontWeight="600">{badge1}</text>
       </g>
 
-      <g>
-        {/* Python badge */}
-        <rect x="290" y="290" width="90" height="32" rx="16" fill="rgba(30,27,75,0.9)" stroke="rgba(34,211,238,0.5)" strokeWidth="1" />
-        <text x="335" y="311" textAnchor="middle" fill="rgba(103,232,249,1)" fontSize="11" fontWeight="600">Python</text>
-        <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="4s" repeatCount="indefinite" additive="sum" />
+      {/* Floating badge 2 */}
+      <g transform={`translate(${x + (flip ? 30 : -90)}, 80)`}>
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values={`${x + (flip ? 30 : -90)},80; ${x + (flip ? 30 : -90)},92; ${x + (flip ? 30 : -90)},80`}
+          dur="3.5s"
+          begin={`${parseFloat(delay) + 0.5}s`}
+          repeatCount="indefinite"
+        />
+        <rect x="0" y="0" width="76" height="26" rx="13" fill="#1e1b4b" stroke="#22d3ee" strokeWidth="1" />
+        <text x="38" y="17" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="600">{badge2}</text>
       </g>
 
-      <g>
-        {/* Claude badge */}
-        <rect x="20" y="270" width="90" height="32" rx="16" fill="rgba(30,27,75,0.9)" stroke="rgba(139,92,246,0.5)" strokeWidth="1" />
-        <text x="65" y="291" textAnchor="middle" fill="rgba(196,181,253,1)" fontSize="11" fontWeight="600">Claude AI</text>
-        <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0" dur="2.8s" repeatCount="indefinite" additive="sum" />
-      </g>
+      {/* Name label */}
+      <text x={x} y="165" textAnchor="middle" fill="#6b7280" fontSize="11" fontWeight="500">{label}</text>
+    </g>
+  );
+}
 
-      {/* Connection dots */}
-      {[
-        { cx: 100, cy: 156 },
-        { cx: 300, cy: 116 },
-        { cx: 335, cy: 306 },
-        { cx: 65, cy: 286 },
-      ].map((dot, i) => (
-        <circle key={i} cx={dot.cx} cy={dot.cy} r="3" fill="rgba(99,102,241,0.6)">
-          <animate attributeName="opacity" values="0.6;1;0.6" dur={`${2 + i * 0.5}s`} repeatCount="indefinite" />
-        </circle>
-      ))}
+function TwoFiguresSVG() {
+  return (
+    <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
+      <defs>
+        <linearGradient id="headGrad" x1="0" y1="-22" x2="0" y2="22" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#818cf8" />
+          <stop offset="100%" stopColor="#6366f1" />
+        </linearGradient>
+        <linearGradient id="bodyGrad" x1="-30" y1="28" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#6366f1" />
+          <stop offset="100%" stopColor="#4338ca" />
+        </linearGradient>
+      </defs>
 
-      {/* Orbit ring */}
-      <ellipse cx="200" cy="200" rx="155" ry="155" stroke="rgba(99,102,241,0.1)" strokeWidth="1" strokeDasharray="4 8" />
+      {/* Ground shadow */}
+      <ellipse cx="130" cy="205" rx="45" ry="6" fill="#6366f1" opacity="0.1" />
+      <ellipse cx="270" cy="205" rx="45" ry="6" fill="#6366f1" opacity="0.1" />
+
+      {/* Person 1 — with laptop, left */}
+      <PersonFigure x={130} delay="0s" label="AI Engineer" badge1="Python" badge2="Make.com" />
+
+      {/* Person 2 — pointing up, right */}
+      <PersonFigure x={270} delay="1.5s" label="AI Strategist" badge1="GPT-4o" badge2="n8n" flip />
+
+      {/* Connection arc between them */}
+      <path d="M160 60 Q200 30 240 60" stroke="#6366f1" strokeWidth="1" strokeDasharray="4 4" fill="none" opacity="0.4">
+        <animate attributeName="stroke-dashoffset" values="0;-16" dur="2s" repeatCount="indefinite" />
+      </path>
+
+      {/* Center spark */}
+      <circle cx="200" cy="44" r="5" fill="#22d3ee" opacity="0.7">
+        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+      </circle>
     </svg>
   );
 }
@@ -66,17 +149,16 @@ export default function About() {
 
   return (
     <section id="o-nas" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 glow-orb bg-violet-700 opacity-20" />
       <div className="absolute bottom-0 left-0 w-64 h-64 glow-orb bg-indigo-700 opacity-20" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Illustration */}
+          {/* Two animated figures */}
           <div className="flex justify-center lg:justify-start">
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96 animate-float">
-              <AvatarIllustration />
+            <div className="relative w-full max-w-sm h-72">
+              <TwoFiguresSVG />
             </div>
           </div>
 
@@ -99,7 +181,6 @@ export default function About() {
               <p className="text-slate-400 leading-relaxed">{t.about.description2}</p>
             </div>
 
-            {/* Points */}
             <ul className="space-y-3">
               {t.about.points.map((point, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -111,7 +192,6 @@ export default function About() {
               ))}
             </ul>
 
-            {/* CTA */}
             <button
               onClick={() =>
                 document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })

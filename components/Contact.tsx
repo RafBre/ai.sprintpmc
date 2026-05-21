@@ -13,9 +13,9 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/xnnqrzpj", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
       if (res.ok) {
@@ -33,11 +33,7 @@ export default function Contact() {
     "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white/10 transition-all";
 
   return (
-    <section
-      id="kontakt"
-      className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden"
-    >
-      {/* Background decoration */}
+    <section id="kontakt" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] glow-orb bg-indigo-900 opacity-30 -translate-y-1/2" />
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -57,44 +53,43 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-12 items-start max-w-5xl mx-auto">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-5">
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                  <Mail size={18} className="text-indigo-400" />
-                </div>
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Email</p>
-                  <a
-                    href={`mailto:${t.contact.info.email}`}
-                    className="text-white font-medium hover:text-indigo-300 transition-colors"
-                  >
-                    {t.contact.info.email}
-                  </a>
-                </div>
+          <div className="lg:col-span-2 space-y-5">
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                <Mail size={18} className="text-indigo-400" />
               </div>
-
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} className="text-violet-400" />
-                </div>
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Lokalizacja</p>
-                  <p className="text-white font-medium">{t.contact.info.location}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                  <CircleDot size={18} className="text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Status</p>
-                  <p className="text-emerald-400 font-medium">{t.contact.info.available}</p>
-                </div>
+              <div>
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Email</p>
+                <a
+                  href={`mailto:${t.contact.info.email}`}
+                  className="text-white font-medium hover:text-indigo-300 transition-colors"
+                >
+                  {t.contact.info.email}
+                </a>
               </div>
             </div>
 
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center flex-shrink-0">
+                <MapPin size={18} className="text-violet-400" />
+              </div>
+              <div>
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">
+                  {t.contact.badge === "Kontakt" ? "Lokalizacja" : "Location"}
+                </p>
+                <p className="text-white font-medium">{t.contact.info.location}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                <CircleDot size={18} className="text-emerald-400" />
+              </div>
+              <div>
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Status</p>
+                <p className="text-emerald-400 font-medium">{t.contact.info.available}</p>
+              </div>
+            </div>
           </div>
 
           {/* Form */}
@@ -153,11 +148,10 @@ export default function Contact() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className={`${inputClass} resize-none`}
-                  placeholder="Opowiedz mi o swoim projekcie lub wyzwaniu biznesowym..."
+                  placeholder="Opiszcie nam swój projekt lub wyzwanie biznesowe..."
                 />
               </div>
 
-              {/* Status messages */}
               {status === "success" && (
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm">
                   ✓ {t.contact.form.success}
@@ -168,6 +162,13 @@ export default function Contact() {
                   ✕ {t.contact.form.error}
                 </div>
               )}
+
+              <p className="text-slate-600 text-xs">
+                Wysyłając formularz akceptujesz{" "}
+                <a href="/polityka-prywatnosci" className="text-indigo-400 hover:text-indigo-300 underline">
+                  politykę prywatności
+                </a>.
+              </p>
 
               <button
                 type="submit"

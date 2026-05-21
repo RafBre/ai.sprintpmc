@@ -1,13 +1,20 @@
 "use client";
 
-import { Zap } from "lucide-react";
+import Link from "next/link";
+import Logo from "./Logo";
 import { useLang } from "./LanguageProvider";
 
-const sectionIds = ["uslugi", "o-mnie", "jak-dzialamy", "technologie", "kontakt"];
+const sectionIds = ["uslugi", "o-nas", "jak-dzialamy", "technologie", "kontakt"];
 
 export default function Footer() {
   const { t } = useLang();
   const year = new Date().getFullYear();
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = `/#${id}`;
+  };
 
   return (
     <footer className="bg-slate-950 border-t border-slate-800/60">
@@ -15,13 +22,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo + tagline */}
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
-                <Zap size={14} className="text-white fill-white" />
-              </div>
-              <span className="font-bold text-white">
-                Sprint<span className="text-indigo-400">PMC</span>
-              </span>
+            <div className="flex justify-center md:justify-start mb-3">
+              <Logo height={32} />
             </div>
             <p className="text-slate-500 text-sm">{t.footer.tagline}</p>
           </div>
@@ -31,9 +33,7 @@ export default function Footer() {
             {t.footer.links.map((link, i) => (
               <button
                 key={i}
-                onClick={() =>
-                  document.getElementById(sectionIds[i])?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => scrollTo(sectionIds[i])}
                 className="text-slate-500 hover:text-slate-300 text-sm transition-colors"
               >
                 {link}
@@ -47,6 +47,19 @@ export default function Footer() {
               © {year} SprintPMC. {t.footer.rights}
             </p>
           </div>
+        </div>
+
+        {/* Legal links */}
+        <div className="mt-8 pt-6 border-t border-slate-800/40 flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <Link href="/polityka-prywatnosci" className="text-slate-600 hover:text-slate-400 text-xs transition-colors">
+            Polityka prywatności
+          </Link>
+          <Link href="/klauzula-informacyjna" className="text-slate-600 hover:text-slate-400 text-xs transition-colors">
+            Klauzula informacyjna RODO
+          </Link>
+          <Link href="/odwolanie" className="text-slate-600 hover:text-slate-400 text-xs transition-colors">
+            Odwołanie zgody
+          </Link>
         </div>
       </div>
     </footer>
