@@ -7,7 +7,7 @@ import { useLang } from "./LanguageProvider";
 const navLinks = ["services", "about", "howItWorks", "technologies", "contact"] as const;
 const sectionIds = {
   services: "uslugi",
-  about: "o-mnie",
+  about: "o-nas",
   howItWorks: "jak-dzialamy",
   technologies: "technologie",
   contact: "kontakt",

@@ -51,7 +51,7 @@ export default function HowItWorks() {
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-4 px-8 py-5 rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 border border-indigo-100">
             <div className="text-left">
-              <p className="font-semibold text-slate-900 text-sm">Gotowy żeby zacząć?</p>
+              <p className="font-semibold text-slate-900 text-sm">Gotowi żeby zacząć?</p>
               <p className="text-slate-500 text-xs">Pierwsza konsultacja jest bezpłatna</p>
             </div>
             <button

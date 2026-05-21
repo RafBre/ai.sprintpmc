@@ -4,8 +4,8 @@ export const translations = {
   pl: {
     nav: {
       services: "Usługi",
-      about: "O mnie",
-      howItWorks: "Jak działam",
+      about: "O nas",
+      howItWorks: "Jak działamy",
       technologies: "Technologie",
       contact: "Kontakt",
       cta: "Porozmawiajmy",
@@ -15,7 +15,7 @@ export const translations = {
       title: "Automatyzuj z AI.",
       titleAccent: "Działaj szybciej.",
       subtitle:
-        "Projektuję inteligentne automatyzacje, które uwalniają Twój czas, eliminują błędy i skalują Twój biznes — bez zatrudniania dodatkowych ludzi.",
+        "Projektujemy inteligentne automatyzacje, które uwalniają Twój czas, eliminują błędy i skalują Twój biznes - bez zatrudniania dodatkowych ludzi.",
       cta1: "Umów konsultację",
       cta2: "Zobacz usługi",
       stats: [
@@ -33,21 +33,21 @@ export const translations = {
           gradient: "from-amber-500 to-orange-500",
           title: "Automatyzacja procesów",
           description:
-            "Eliminuję powtarzalne zadania i optymalizuję przepływ pracy. Oszczędzasz czas, redukujesz koszty i minimalizujesz błędy.",
+            "Eliminujemy powtarzalne zadania i optymalizuję przepływ pracy. Oszczędzasz czas, redukujesz koszty i minimalizujesz błędy.",
         },
         {
           icon: "🔗",
           gradient: "from-indigo-500 to-blue-500",
           title: "Integracje systemów",
           description:
-            "Łączę CRM, ERP, e-commerce i narzędzia marketingowe w jeden spójny ekosystem wymieniający dane w czasie rzeczywistym.",
+            "Łączymy CRM, ERP, e-commerce i narzędzia marketingowe w jeden spójny ekosystem wymieniający dane w czasie rzeczywistym.",
         },
         {
           icon: "💬",
           gradient: "from-violet-500 to-purple-600",
           title: "Chatboty & Asystenci AI",
           description:
-            "Buduję inteligentnych asystentów obsługujących klientów i pracowników 24/7, rozumiejących kontekst i uczących się z każdej rozmowy.",
+            "Budujemy inteligentnych asystentów obsługujących klientów i pracowników 24/7, rozumiejących kontekst i uczących się z każdej rozmowy.",
         },
         {
           icon: "📊",
@@ -73,13 +73,13 @@ export const translations = {
       ],
     },
     about: {
-      badge: "O mnie",
-      title: "Łączę biznes",
+      badge: "O nas",
+      title: "Łączymy biznes",
       titleAccent: "z mocą AI",
       description:
-        "Jestem specjalistą od automatyzacji AI z doświadczeniem we wdrażaniu inteligentnych rozwiązań dla firm różnej wielkości. Pomagam przedsiębiorcom i zespołom odzyskać czas, który tracą na powtarzalne, manualne zadania.",
+        "Jesteśmy specjalistami od automatyzacji AI z doświadczeniem we wdrażaniu inteligentnych rozwiązań dla firm różnej wielkości. Pomagamy przedsiębiorcom i zespołom odzyskać czas, który tracą na powtarzalne, manualne zadania.",
       description2:
-        "Moje podejście łączy głęboką wiedzę techniczną z rozumieniem biznesu — nie wdrażam technologii dla samej technologii, lecz rozwiązania realnie wpływające na wyniki i efektywność organizacji.",
+        "Nasze podejście łączy głęboką wiedzę techniczną z rozumieniem biznesu - nie wdrażamy technologii dla samej technologii, lecz rozwiązania realnie wpływające na wyniki i efektywność organizacji.",
       points: [
         "Indywidualne podejście i analiza procesów",
         "Dobór optymalnych narzędzi do każdego przypadku",
@@ -89,8 +89,8 @@ export const translations = {
       imageAlt: "Rafał Breński — AI Automation Expert",
     },
     howItWorks: {
-      title: "Jak działam",
-      subtitle: "Prosty, sprawdzony proces — od pomysłu do działającej automatyzacji",
+      title: "Jak działamy",
+      subtitle: "Prosty, sprawdzony proces - od pomysłu do działającej automatyzacji",
       steps: [
         {
           number: "01",
@@ -104,21 +104,21 @@ export const translations = {
           icon: "🎨",
           title: "Projekt",
           description:
-            "Projektuję architekturę rozwiązania, dobierając optymalne narzędzia i technologie. Otrzymujesz plan z szacowanymi oszczędnościami.",
+            "Projektujemy architekturę rozwiązania, dobierając optymalne narzędzia i technologie. Otrzymujesz plan z szacowanymi oszczędnościami.",
         },
         {
           number: "03",
           icon: "⚙️",
           title: "Wdrożenie",
           description:
-            "Buduję i testuję automatyzacje, zapewniając pełną integrację z Twoimi istniejącymi systemami. Szybkie sprinty, bieżący feedback.",
+            "Budujemy i testuję automatyzacje, zapewniając pełną integrację z Twoimi istniejącymi systemami. Szybkie sprinty, bieżący feedback.",
         },
         {
           number: "04",
           icon: "🚀",
           title: "Wsparcie",
           description:
-            "Szkolenie zespołu, dokumentacja i ciągła optymalizacja. Monitoruję działanie automatyzacji i jestem dostępny po wdrożeniu.",
+            "Szkolenie zespołu, dokumentacja i ciągła optymalizacja. Monitorujemy działanie automatyzacji i jesteśmy dostępni po wdrożeniu.",
         },
       ],
     },
@@ -169,14 +169,14 @@ export const translations = {
         error: "Coś poszło nie tak. Napisz bezpośrednio na email.",
       },
       info: {
-        email: "hello@sprintpmc.com",
+        email: "info@sprintpmc.com",
         location: "Polska — praca zdalna",
         available: "Dostępny do nowych projektów",
       },
     },
     footer: {
       tagline: "Automatyzacje AI dla ambitnych firm.",
-      links: ["Usługi", "O mnie", "Jak działam", "Technologie", "Kontakt"],
+      links: ["Usługi", "O nas", "Jak działamy", "Technologie", "Kontakt"],
       rights: "Wszelkie prawa zastrzeżone.",
     },
   },
@@ -195,7 +195,7 @@ export const translations = {
       title: "Automate with AI.",
       titleAccent: "Move faster.",
       subtitle:
-        "I design intelligent automations that free your time, eliminate errors, and scale your business — without hiring additional people.",
+        "We design intelligent automations that free your time, eliminate errors, and scale your business - without hiring additional people.",
       cta1: "Book a consultation",
       cta2: "See services",
       stats: [
@@ -213,21 +213,21 @@ export const translations = {
           gradient: "from-amber-500 to-orange-500",
           title: "Process Automation",
           description:
-            "I eliminate repetitive tasks and optimize workflow. You save time, reduce costs, and minimize errors across your organization.",
+            "We eliminate repetitive tasks and optimize workflow. You save time, reduce costs, and minimize errors across your organization.",
         },
         {
           icon: "🔗",
           gradient: "from-indigo-500 to-blue-500",
           title: "System Integrations",
           description:
-            "I connect CRM, ERP, e-commerce, and marketing tools into one coherent ecosystem exchanging data in real time.",
+            "We connect CRM, ERP, e-commerce, and marketing tools into one coherent ecosystem exchanging data in real time.",
         },
         {
           icon: "💬",
           gradient: "from-violet-500 to-purple-600",
           title: "AI Chatbots & Assistants",
           description:
-            "I build intelligent assistants serving customers and employees 24/7, understanding context and learning from every conversation.",
+            "We build intelligent assistants serving customers and employees 24/7, understanding context and learning from every conversation.",
         },
         {
           icon: "📊",
@@ -253,13 +253,13 @@ export const translations = {
       ],
     },
     about: {
-      badge: "About me",
-      title: "Bridging business",
+      badge: "About us",
+      title: "Bridging businesses",
       titleAccent: "with AI power",
       description:
-        "I'm an AI automation specialist with experience implementing intelligent solutions for companies of all sizes. I help entrepreneurs and teams reclaim the time they lose to repetitive, manual tasks.",
+        "We are AI automation specialists with experience implementing intelligent solutions for companies of all sizes. We help entrepreneurs and teams reclaim the time they lose to repetitive, manual tasks.",
       description2:
-        "My approach combines deep technical knowledge with business understanding — I don't implement technology for its own sake, but solutions that genuinely impact results and organizational efficiency.",
+        "Our approach combines deep technical knowledge with business understanding - we don't implement technology for its own sake, but solutions that genuinely impact results and organizational efficiency.",
       points: [
         "Individual approach and process analysis",
         "Selecting optimal tools for each use case",
@@ -269,8 +269,8 @@ export const translations = {
       imageAlt: "Rafał Breński — AI Automation Expert",
     },
     howItWorks: {
-      title: "How I work",
-      subtitle: "A simple, proven process — from idea to working automation",
+      title: "How we work",
+      subtitle: "A simple, proven process - from idea to working automation",
       steps: [
         {
           number: "01",
@@ -284,21 +284,21 @@ export const translations = {
           icon: "🎨",
           title: "Design",
           description:
-            "I design the solution architecture, selecting optimal tools and technologies. You receive a plan with estimated savings.",
+            "We design the solution architecture, selecting optimal tools and technologies. You receive a plan with estimated savings.",
         },
         {
           number: "03",
           icon: "⚙️",
           title: "Implementation",
           description:
-            "I build and test automations, ensuring full integration with your existing systems. Fast sprints, continuous feedback.",
+            "We build and test automations, ensuring full integration with your existing systems. Fast sprints, continuous feedback.",
         },
         {
           number: "04",
           icon: "🚀",
           title: "Support",
           description:
-            "Team training, documentation, and continuous optimization. I monitor automations and remain available after deployment.",
+            "Team training, documentation, and continuous optimization. We monitor automations and remain available after deployment.",
         },
       ],
     },
@@ -349,7 +349,7 @@ export const translations = {
         error: "Something went wrong. Please email directly.",
       },
       info: {
-        email: "hello@sprintpmc.com",
+        email: "info@sprintpmc.com",
         location: "Poland — remote work",
         available: "Available for new projects",
       },

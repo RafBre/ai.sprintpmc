@@ -6,7 +6,18 @@
       "Bash(git init *)",
       "Bash(git checkout *)",
       "Bash(gh repo *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(echo \".claude/\")",
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(git commit -m 'fix: resolve TypeScript union type error and add autoprefixer dep *)",
+      "Bash(git commit -m 'docs: add README with Vercel deploy instructions *)",
+      "Bash(git commit -m 'fix: plural forms PL/EN, email info@, remove social icons, single dashes *)"
     ]
   }
 }
