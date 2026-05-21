@@ -362,4 +362,4 @@ export const translations = {
   },
 } as const;
 
-export type Translations = typeof translations.pl;
+export type Translations = typeof translations.pl | typeof translations.en;
