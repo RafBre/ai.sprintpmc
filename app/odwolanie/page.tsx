@@ -3,6 +3,8 @@
 import { useState, FormEvent } from "react";
 import Link from "next/link";
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+
 export default function Odwolanie() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", type: "withdrawal", message: "" });
@@ -11,17 +13,21 @@ export default function Odwolanie() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `[RODO] ${form.type === "withdrawal" ? "Odwołanie zgody" : "Sprzeciw"} — ${form.name}`,
+          from_name: "SprintPMC RODO",
           name: form.name,
           email: form.email,
-          company: "",
-          message: `[ODWOŁANIE ZGODY / ŻĄDANIE RODO]\nRodzaj: ${form.type === "withdrawal" ? "Odwołanie zgody" : "Sprzeciw wobec przetwarzania"}\n\n${form.message}`,
+          message: `Rodzaj: ${form.type === "withdrawal" ? "Odwołanie zgody" : "Sprzeciw wobec przetwarzania"}\n\n${form.message || "(brak dodatkowych informacji)"}`,
+          botcheck: "",
         }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus("success");
         setForm({ name: "", email: "", type: "withdrawal", message: "" });
       } else {
@@ -58,18 +64,27 @@ export default function Odwolanie() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-2xl p-8 space-y-5 shadow-sm">
+            <input type="checkbox" name="botcheck" className="hidden" />
 
             <div>
               <label className="block text-slate-600 text-xs uppercase tracking-wider font-semibold mb-2">Rodzaj żądania</label>
               <div className="grid grid-cols-2 gap-3">
-                <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${form.type === "withdrawal" ? "border-indigo-400 bg-indigo-50 text-indigo-700" : "border-slate-200 hover:border-slate-300"}`}>
-                  <input type="radio" name="type" value="withdrawal" checked={form.type === "withdrawal"} onChange={(e) => setForm({ ...form, type: e.target.value })} className="sr-only" />
-                  <span className="text-sm font-medium">Cofnięcie zgody</span>
-                </label>
-                <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${form.type === "objection" ? "border-indigo-400 bg-indigo-50 text-indigo-700" : "border-slate-200 hover:border-slate-300"}`}>
-                  <input type="radio" name="type" value="objection" checked={form.type === "objection"} onChange={(e) => setForm({ ...form, type: e.target.value })} className="sr-only" />
-                  <span className="text-sm font-medium">Sprzeciw</span>
-                </label>
+                {[
+                  { value: "withdrawal", label: "Cofnięcie zgody" },
+                  { value: "objection", label: "Sprzeciw" },
+                ].map((opt) => (
+                  <label
+                    key={opt.value}
+                    className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                      form.type === opt.value
+                        ? "border-indigo-400 bg-indigo-50 text-indigo-700"
+                        : "border-slate-200 hover:border-slate-300"
+                    }`}
+                  >
+                    <input type="radio" name="type" value={opt.value} checked={form.type === opt.value} onChange={(e) => setForm({ ...form, type: e.target.value })} className="sr-only" />
+                    <span className="text-sm font-medium">{opt.label}</span>
+                  </label>
+                ))}
               </div>
             </div>
 
@@ -90,12 +105,12 @@ export default function Odwolanie() {
 
             {status === "error" && (
               <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">
-                Wystąpił błąd. Prosimy o kontakt bezpośrednio na adres <a href="mailto:info@sprintpmc.com" className="underline">info@sprintpmc.com</a>.
+                Wystąpił błąd. Prosimy o kontakt bezpośrednio: <a href="mailto:info@sprintpmc.com" className="underline">info@sprintpmc.com</a>
               </div>
             )}
 
             <p className="text-slate-400 text-xs">
-              Żądanie zostanie zrealizowane zgodnie z art. 12 RODO w terminie do 30 dni. W razie pytań: <a href="mailto:info@sprintpmc.com" className="text-indigo-500 hover:underline">info@sprintpmc.com</a>.
+              Żądanie zostanie zrealizowane zgodnie z art. 12 RODO w terminie do 30 dni.
             </p>
 
             <button

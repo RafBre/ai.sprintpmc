@@ -20,7 +20,9 @@
       "Bash(git commit -m 'fix: plural forms PL/EN, email info@, remove social icons, single dashes *)",
       "WebFetch(domain:sprintpmc.com)",
       "Bash(git commit -m 'feat: logo SVG, email API \\(Resend\\), service subpages, partners bar, legal pages, tech redesign, 2-figure About, better step SVGs *)",
-      "Bash(git commit -m 'feat: switch contact form to Gmail/Google Workspace SMTP via nodemailer *)"
+      "Bash(git commit -m 'feat: switch contact form to Gmail/Google Workspace SMTP via nodemailer *)",
+      "Bash(npm --prefix \"D:/ai.sprintpmc\" uninstall nodemailer @types/nodemailer)",
+      "Bash(git commit -m 'fix: replace API route + nodemailer with Web3Forms \\(client-side, no env vars on Vercel\\) *)"
     ]
   }
 }

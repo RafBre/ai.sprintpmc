@@ -4,6 +4,10 @@ import { useState, FormEvent } from "react";
 import { Mail, MapPin, CircleDot } from "lucide-react";
 import { useLang } from "./LanguageProvider";
 
+// Klucz Web3Forms — zarejestruj się bezpłatnie na web3forms.com
+// Podaj swój email → dostaniesz klucz → wklej poniżej
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+
 export default function Contact() {
   const { t } = useLang();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -13,12 +17,22 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `✉ Nowa wiadomość od ${form.name}${form.company ? ` (${form.company})` : ""}`,
+          from_name: "SprintPMC Kontakt",
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          message: form.message,
+          botcheck: "",
+        }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus("success");
         setForm({ name: "", email: "", company: "", message: "" });
       } else {
@@ -38,7 +52,6 @@ export default function Contact() {
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
@@ -60,10 +73,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Email</p>
-                <a
-                  href={`mailto:${t.contact.info.email}`}
-                  className="text-white font-medium hover:text-indigo-300 transition-colors"
-                >
+                <a href={`mailto:${t.contact.info.email}`} className="text-white font-medium hover:text-indigo-300 transition-colors">
                   {t.contact.info.email}
                 </a>
               </div>
@@ -94,62 +104,29 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-5"
-            >
+            <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-5">
+              {/* Honeypot antispam — hidden */}
+              <input type="checkbox" name="botcheck" className="hidden" />
+
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
-                    {t.contact.form.name}
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className={inputClass}
-                    placeholder="Jan Kowalski"
-                  />
+                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">{t.contact.form.name}</label>
+                  <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClass} placeholder="Jan Kowalski" />
                 </div>
                 <div>
-                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
-                    {t.contact.form.email}
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className={inputClass}
-                    placeholder="jan@firma.pl"
-                  />
+                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">{t.contact.form.email}</label>
+                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} placeholder="jan@firma.pl" />
                 </div>
               </div>
+
               <div>
-                <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
-                  {t.contact.form.company}
-                </label>
-                <input
-                  type="text"
-                  value={form.company}
-                  onChange={(e) => setForm({ ...form, company: e.target.value })}
-                  className={inputClass}
-                  placeholder="Twoja firma"
-                />
+                <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">{t.contact.form.company}</label>
+                <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClass} placeholder="Twoja firma" />
               </div>
+
               <div>
-                <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
-                  {t.contact.form.message}
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className={`${inputClass} resize-none`}
-                  placeholder="Opiszcie nam swój projekt lub wyzwanie biznesowe..."
-                />
+                <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">{t.contact.form.message}</label>
+                <textarea required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Opiszcie nam swój projekt lub wyzwanie biznesowe..." />
               </div>
 
               {status === "success" && (
@@ -165,9 +142,7 @@ export default function Contact() {
 
               <p className="text-slate-600 text-xs">
                 Wysyłając formularz akceptujesz{" "}
-                <a href="/polityka-prywatnosci" className="text-indigo-400 hover:text-indigo-300 underline">
-                  politykę prywatności
-                </a>.
+                <a href="/polityka-prywatnosci" className="text-indigo-400 hover:text-indigo-300 underline">politykę prywatności</a>.
               </p>
 
               <button
