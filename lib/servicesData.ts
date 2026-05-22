@@ -23,13 +23,13 @@ export const servicesData: ServiceDetail[] = [
     description: {
       pl: [
         "Automatyzacja procesów biznesowych to jeden z najskuteczniejszych sposobów na uwolnienie zasobów ludzkich od monotonnych, powtarzalnych czynności. Analizujemy każdy etap Waszych procesów operacyjnych i identyfikujemy miejsca, gdzie wdrożenie automatyzacji przyniesie największe korzyści.",
-        "Nasze rozwiązania obejmują zarówno proste automatyzacje jednoetapowe — jak automatyczne wysyłanie raportów czy powiadomień — jak i złożone, wieloetapowe workflow łączące dziesiątki systemów i angażujące modele AI do podejmowania decyzji w czasie rzeczywistym.",
-        "Efekty wdrożeń są mierzalne od pierwszych tygodni: redukcja czasu realizacji procesów nawet o 80%, eliminacja błędów ludzkich, a przede wszystkim — uwolnienie zespołu do pracy wymagającej kreatywności i relacji z klientami.",
+        "Nasze rozwiązania obejmują zarówno proste automatyzacje jednoetapowe - jak automatyczne wysyłanie raportów czy powiadomień - jak i złożone, wieloetapowe workflow łączące dziesiątki systemów i angażujące modele AI do podejmowania decyzji w czasie rzeczywistym.",
+        "Efekty wdrożeń są mierzalne od pierwszych tygodni: redukcja czasu realizacji procesów nawet o 80%, eliminacja błędów ludzkich, a przede wszystkim - uwolnienie zespołu do pracy wymagającej kreatywności i relacji z klientami.",
       ],
       en: [
         "Business process automation is one of the most effective ways to free human resources from monotonous, repetitive tasks. We analyze every stage of your operational processes and identify where automation will bring the greatest benefits.",
-        "Our solutions range from simple single-step automations — like automatic report sending or notifications — to complex, multi-step workflows connecting dozens of systems and engaging AI models for real-time decision making.",
-        "Implementation results are measurable from the first weeks: up to 80% reduction in process completion time, elimination of human errors, and above all — freeing your team for work that requires creativity and customer relationships.",
+        "Our solutions range from simple single-step automations - like automatic report sending or notifications - to complex, multi-step workflows connecting dozens of systems and engaging AI models for real-time decision making.",
+        "Implementation results are measurable from the first weeks: up to 80% reduction in process completion time, elimination of human errors, and above all - freeing your team for work that requires creativity and customer relationships.",
       ],
     },
     benefits: {
@@ -39,7 +39,7 @@ export const servicesData: ServiceDetail[] = [
         "Praca automatyzacji 24/7 bez przerw i urlopów",
         "Skalowanie operacji bez proporcjonalnego wzrostu zatrudnienia",
         "Pełna audytowalność i logowanie każdego kroku procesu",
-        "Szybki zwrot z inwestycji — zazwyczaj w ciągu 2-4 miesięcy",
+        "Szybki zwrot z inwestycji - zazwyczaj w ciągu 2-4 miesięcy",
       ],
       en: [
         "Up to 80% reduction in process completion time",
@@ -47,7 +47,7 @@ export const servicesData: ServiceDetail[] = [
         "Automation works 24/7 without breaks or vacations",
         "Scale operations without proportional headcount growth",
         "Full auditability and logging of every process step",
-        "Fast ROI — typically within 2-4 months",
+        "Fast ROI - typically within 2-4 months",
       ],
     },
     useCases: {
@@ -79,12 +79,12 @@ export const servicesData: ServiceDetail[] = [
     },
     description: {
       pl: [
-        "Większość firm korzysta z dziesiątek różnych systemów — CRM, ERP, platforma e-commerce, narzędzia marketingowe, systemy HR, komunikatory. Problem w tym, że każdy z tych systemów działa w izolacji, co wymusza ręczne przepisywanie danych między systemami, prowadzi do błędów i dezaktualizacji informacji.",
+        "Większość firm korzysta z dziesiątek różnych systemów - CRM, ERP, platforma e-commerce, narzędzia marketingowe, systemy HR, komunikatory. Problem w tym, że każdy z tych systemów działa w izolacji, co wymusza ręczne przepisywanie danych między systemami, prowadzi do błędów i dezaktualizacji informacji.",
         "Tworzymy integracje, które sprawiają, że wszystkie Wasze systemy rozmawiają ze sobą w czasie rzeczywistym. Zmiana w CRM automatycznie aktualizuje dane w systemie fakturowania. Nowe zamówienie z e-commerce trafia od razu do magazynu i systemu wysyłki. Lead z kampanii reklamowej od razu pojawia się w CRM z pełną historią interakcji.",
         "Budujemy zarówno integracje point-to-point między konkretnymi systemami, jak i centralne hubby danych, które stają się sercem ekosystemu informatycznego firmy.",
       ],
       en: [
-        "Most companies use dozens of different systems — CRM, ERP, e-commerce platforms, marketing tools, HR systems, communication tools. The problem is that each system operates in isolation, requiring manual data entry between systems, leading to errors and outdated information.",
+        "Most companies use dozens of different systems - CRM, ERP, e-commerce platforms, marketing tools, HR systems, communication tools. The problem is that each system operates in isolation, requiring manual data entry between systems, leading to errors and outdated information.",
         "We create integrations that make all your systems talk to each other in real time. A change in CRM automatically updates billing data. A new e-commerce order immediately reaches the warehouse and shipping system. A lead from an ad campaign immediately appears in CRM with full interaction history.",
         "We build both point-to-point integrations between specific systems and central data hubs that become the heart of a company's IT ecosystem.",
       ],
@@ -94,7 +94,7 @@ export const servicesData: ServiceDetail[] = [
         "Eliminacja ręcznego przepisywania danych między systemami",
         "Spójność danych w czasie rzeczywistym we wszystkich systemach",
         "Redukcja błędów wynikających z wielokrotnego wprowadzania danych",
-        "Oszczędność czasu zespołu — brak potrzeby logowania się do wielu systemów",
+        "Oszczędność czasu zespołu - brak potrzeby logowania się do wielu systemów",
         "Pełny widok klienta w jednym miejscu (360° customer view)",
         "Łatwe dodawanie nowych systemów do ekosystemu",
       ],
@@ -102,7 +102,7 @@ export const servicesData: ServiceDetail[] = [
         "Elimination of manual data re-entry between systems",
         "Real-time data consistency across all systems",
         "Reduction of errors from multiple data entries",
-        "Team time savings — no need to log into multiple systems",
+        "Team time savings - no need to log into multiple systems",
         "Complete customer view in one place (360° customer view)",
         "Easy addition of new systems to the ecosystem",
       ],
@@ -137,12 +137,12 @@ export const servicesData: ServiceDetail[] = [
     description: {
       pl: [
         "Nowoczesne chatboty AI to coś zupełnie innego od prostych botów sprzed kilku lat. Oparte na modelach językowych (GPT-4o, Claude, Gemini) potrafią prowadzić naturalne rozmowy, rozumieć kontekst, odpowiadać na złożone pytania i wykonywać akcje w imieniu użytkownika.",
-        "Budujemy asystentów dopasowanych do specyfiki Waszego biznesu — z dostępem do Waszej bazy wiedzy, dokumentacji, historii klientów i systemów wewnętrznych. Asystent wie, jakie produkty oferujecie, zna Waszą politykę cenową i może samodzielnie obsłużyć reklamację, złożyć zamówienie czy umówić spotkanie.",
+        "Budujemy asystentów dopasowanych do specyfiki Waszego biznesu - z dostępem do Waszej bazy wiedzy, dokumentacji, historii klientów i systemów wewnętrznych. Asystent wie, jakie produkty oferujecie, zna Waszą politykę cenową i może samodzielnie obsłużyć reklamację, złożyć zamówienie czy umówić spotkanie.",
         "Wdrażamy asystentów na stronach www, w Slacku, MS Teams, WhatsApp i własnych aplikacjach. Każdy asystent jest w pełni konfigurowalny pod względem tonu komunikacji, zakresu działania i warunków przekierowania do człowieka.",
       ],
       en: [
         "Modern AI chatbots are completely different from the simple bots of a few years ago. Based on language models (GPT-4o, Claude, Gemini), they can hold natural conversations, understand context, answer complex questions and perform actions on behalf of the user.",
-        "We build assistants tailored to your business specifics — with access to your knowledge base, documentation, customer history and internal systems. The assistant knows what products you offer, knows your pricing policy, and can independently handle a complaint, place an order or schedule a meeting.",
+        "We build assistants tailored to your business specifics - with access to your knowledge base, documentation, customer history and internal systems. The assistant knows what products you offer, knows your pricing policy, and can independently handle a complaint, place an order or schedule a meeting.",
         "We deploy assistants on websites, in Slack, MS Teams, WhatsApp and custom applications. Each assistant is fully configurable in terms of communication tone, scope of operation and conditions for escalation to a human.",
       ],
     },
@@ -193,13 +193,13 @@ export const servicesData: ServiceDetail[] = [
     },
     description: {
       pl: [
-        "Większość firm posiada ogromne ilości danych rozsianych po dziesiątkach systemów — ale zaledwie ułamek tych danych jest faktycznie wykorzystywany do podejmowania decyzji. Powód? Brak czasu, brak narzędzi lub brak kompetencji do przetwarzania danych na skalę.",
-        "Wdrażamy rozwiązania, które automatycznie zbierają dane z wszystkich Waszych źródeł, przetwarzają je z użyciem modeli AI i dostarczają gotowe insighty bezpośrednio do skrzynki mailowej zarządu lub dashboardu. Codziennie rano — raport z poprzedniego dnia. W czasie rzeczywistym — alert o anomalii w sprzedaży.",
+        "Większość firm posiada ogromne ilości danych rozsianych po dziesiątkach systemów - ale zaledwie ułamek tych danych jest faktycznie wykorzystywany do podejmowania decyzji. Powód? Brak czasu, brak narzędzi lub brak kompetencji do przetwarzania danych na skalę.",
+        "Wdrażamy rozwiązania, które automatycznie zbierają dane z wszystkich Waszych źródeł, przetwarzają je z użyciem modeli AI i dostarczają gotowe insighty bezpośrednio do skrzynki mailowej zarządu lub dashboardu. Codziennie rano - raport z poprzedniego dnia. W czasie rzeczywistym - alert o anomalii w sprzedaży.",
         "Budujemy też systemy predykcyjne: prognozowanie popytu, wykrywanie churnu, scoring leadów. Modele AI uczą się na Waszych historycznych danych i z czasem stają się coraz trafniejsze.",
       ],
       en: [
-        "Most companies have enormous amounts of data scattered across dozens of systems — but only a fraction of this data is actually used for decision making. The reason? Lack of time, tools or competencies to process data at scale.",
-        "We implement solutions that automatically collect data from all your sources, process it using AI models and deliver ready insights directly to management's inbox or dashboard. Every morning — a report from the previous day. In real time — an alert about a sales anomaly.",
+        "Most companies have enormous amounts of data scattered across dozens of systems - but only a fraction of this data is actually used for decision making. The reason? Lack of time, tools or competencies to process data at scale.",
+        "We implement solutions that automatically collect data from all your sources, process it using AI models and deliver ready insights directly to management's inbox or dashboard. Every morning - a report from the previous day. In real time - an alert about a sales anomaly.",
         "We also build predictive systems: demand forecasting, churn detection, lead scoring. AI models learn from your historical data and become more accurate over time.",
       ],
     },
@@ -250,12 +250,12 @@ export const servicesData: ServiceDetail[] = [
     },
     description: {
       pl: [
-        "Marketing automation przestał być domeną tylko dużych korporacji. Dziś nawet małe firmy mogą automatyzować komunikację z klientami na poziomie niedostępnym wcześniej — dzięki AI, które personalizuje każdą wiadomość w oparciu o zachowanie i profil odbiorcy.",
+        "Marketing automation przestał być domeną tylko dużych korporacji. Dziś nawet małe firmy mogą automatyzować komunikację z klientami na poziomie niedostępnym wcześniej - dzięki AI, które personalizuje każdą wiadomość w oparciu o zachowanie i profil odbiorcy.",
         "Budujemy systemy, które automatycznie segmentują bazę kontaktów, dobierają optymalny czas wysyłki, personalizują treść emaili i SMS-ów, prowadzą leady przez lejek sprzedażowy i informują handlowca, gdy lead jest gotowy do rozmowy.",
         "Integrujemy się z popularnymi platformami (Mailchimp, ActiveCampaign, HubSpot, Klaviyo) lub budujemy własne rozwiązania oparte na n8n i Make.com, które dają pełną kontrolę i brak limitów licencyjnych.",
       ],
       en: [
-        "Marketing automation is no longer just for large corporations. Today even small companies can automate customer communication at a level previously unavailable — thanks to AI that personalizes every message based on recipient behavior and profile.",
+        "Marketing automation is no longer just for large corporations. Today even small companies can automate customer communication at a level previously unavailable - thanks to AI that personalizes every message based on recipient behavior and profile.",
         "We build systems that automatically segment contact databases, select optimal send times, personalize email and SMS content, guide leads through the sales funnel and inform sales reps when a lead is ready to talk.",
         "We integrate with popular platforms (Mailchimp, ActiveCampaign, HubSpot, Klaviyo) or build custom solutions based on n8n and Make.com, giving full control and no licensing limits.",
       ],
@@ -264,7 +264,7 @@ export const servicesData: ServiceDetail[] = [
       pl: [
         "Komunikacja z klientem w odpowiednim momencie, automatycznie",
         "Wyższe konwersje dzięki personalizacji treści przez AI",
-        "Brak przeoczonego leadu — każdy jest prowadzony przez lejek",
+        "Brak przeoczonego leadu - każdy jest prowadzony przez lejek",
         "Oszczędność czasu działu marketingu na manualnych kampaniach",
         "Mierzalny ROI z każdej automatyzacji marketingowej",
         "A/B testy przeprowadzane automatycznie przez AI",
@@ -272,7 +272,7 @@ export const servicesData: ServiceDetail[] = [
       en: [
         "Customer communication at the right moment, automatically",
         "Higher conversions thanks to AI content personalization",
-        "No missed leads — every one is guided through the funnel",
+        "No missed leads - every one is guided through the funnel",
         "Marketing team time savings on manual campaigns",
         "Measurable ROI from every marketing automation",
         "A/B tests conducted automatically by AI",
@@ -308,12 +308,12 @@ export const servicesData: ServiceDetail[] = [
     description: {
       pl: [
         "Przed wdrożeniem jakiejkolwiek automatyzacji warto zadać pytanie: czy automatyzujemy właściwy proces? Czasem proces jest po prostu źle zaprojektowany i jego automatyzacja tylko utrwali problem. Dlatego każde nasze wdrożenie zaczynamy od audytu.",
-        "Mapujemy aktualne procesy, identyfikujemy wąskie gardła, zbędne kroki i miejsca, gdzie tracony jest czas. Następnie projektujemy zoptymalizowany workflow — często jeszcze przed automatyzacją sam redesign procesu przynosi znaczące oszczędności.",
+        "Mapujemy aktualne procesy, identyfikujemy wąskie gardła, zbędne kroki i miejsca, gdzie tracony jest czas. Następnie projektujemy zoptymalizowany workflow - często jeszcze przed automatyzacją sam redesign procesu przynosi znaczące oszczędności.",
         "Korzystamy z narzędzi AI do analizy logów, ticketów i historycznych danych, aby obiektywnie wskazać, gdzie czas jest marnowany. Dostarczamy pełną dokumentację procesu i czytelne mapy przepływów dla całego zespołu.",
       ],
       en: [
         "Before implementing any automation, it's worth asking: are we automating the right process? Sometimes a process is simply poorly designed and automating it will only cement the problem. That's why we start every implementation with an audit.",
-        "We map current processes, identify bottlenecks, unnecessary steps and places where time is lost. Then we design an optimized workflow — often the process redesign alone brings significant savings even before automation.",
+        "We map current processes, identify bottlenecks, unnecessary steps and places where time is lost. Then we design an optimized workflow - often the process redesign alone brings significant savings even before automation.",
         "We use AI tools to analyze logs, tickets and historical data to objectively identify where time is wasted. We deliver full process documentation and clear flow maps for the entire team.",
       ],
     },
