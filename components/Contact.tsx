@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Mail, MapPin, CircleDot } from "lucide-react";
+import { Mail, MapPin, CircleDot, Phone } from "lucide-react";
 import { useLang } from "./LanguageProvider";
 
 // Klucz Web3Forms — zarejestruj się bezpłatnie na web3forms.com
@@ -78,6 +78,19 @@ export default function Contact() {
                 <a href={`mailto:${t.contact.info.email}`} className="text-white font-medium hover:text-indigo-300 transition-colors">
                   {t.contact.info.email}
                 </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                <Phone size={18} className="text-cyan-400" />
+              </div>
+              <div>
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">
+                  {t.contact.badge === "Kontakt" ? "Telefon" : "Phone"}
+                </p>
+                <a href="tel:+48502464682" className="block text-white font-medium hover:text-indigo-300 transition-colors">+48 502 464 682</a>
+                <a href="tel:+16502577000" className="block text-white font-medium hover:text-indigo-300 transition-colors">+1 (650) 257-7000</a>
               </div>
             </div>
 
