@@ -23,11 +23,11 @@ export default function KlauzulaInformacyjna() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Administrator danych</p>
               <p className="font-medium text-slate-900">SprintPMC</p>
-              <p className="text-sm text-slate-600">info@sprintpmc.com</p>
+              <p className="text-sm text-slate-600">contact@sprintpmc.com</p>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Kontakt w sprawach danych</p>
-              <a href="mailto:info@sprintpmc.com" className="text-indigo-600 hover:underline text-sm">info@sprintpmc.com</a>
+              <a href="mailto:contact@sprintpmc.com" className="text-indigo-600 hover:underline text-sm">contact@sprintpmc.com</a>
             </div>
           </div>
 

@@ -21,7 +21,7 @@ export default function PolitykaPrywatnosci() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">1. Administrator danych osobowych</h2>
-            <p>Administratorem Waszych danych osobowych jest SprintPMC (dalej: „Administrator"), dostępny pod adresem e-mail: <a href="mailto:info@sprintpmc.com" className="text-indigo-600 hover:underline">info@sprintpmc.com</a>.</p>
+            <p>Administratorem Waszych danych osobowych jest SprintPMC (dalej: „Administrator"), dostępny pod adresem e-mail: <a href="mailto:contact@sprintpmc.com" className="text-indigo-600 hover:underline">contact@sprintpmc.com</a>.</p>
           </section>
 
           <section>
@@ -79,7 +79,7 @@ export default function PolitykaPrywatnosci() {
               <li><strong>Prawo do cofnięcia zgody</strong> w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania przed cofnięciem),</li>
               <li><strong>Prawo do skargi</strong> do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</li>
             </ul>
-            <p className="mt-3">Aby skorzystać z przysługujących Wam praw, prosimy o kontakt: <a href="mailto:info@sprintpmc.com" className="text-indigo-600 hover:underline">info@sprintpmc.com</a>.</p>
+            <p className="mt-3">Aby skorzystać z przysługujących Wam praw, prosimy o kontakt: <a href="mailto:contact@sprintpmc.com" className="text-indigo-600 hover:underline">contact@sprintpmc.com</a>.</p>
           </section>
 
           <section>

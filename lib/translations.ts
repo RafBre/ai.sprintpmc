@@ -169,7 +169,7 @@ export const translations = {
         error: "Coś poszło nie tak. Napisz bezpośrednio na email.",
       },
       info: {
-        email: "info@sprintpmc.com",
+        email: "contact@sprintpmc.com",
         location: "Polska — praca zdalna",
         available: "Dostępny do nowych projektów",
       },
@@ -349,7 +349,7 @@ export const translations = {
         error: "Something went wrong. Please email directly.",
       },
       info: {
-        email: "info@sprintpmc.com",
+        email: "contact@sprintpmc.com",
         location: "Poland — remote work",
         available: "Available for new projects",
       },

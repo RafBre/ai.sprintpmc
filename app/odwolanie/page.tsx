@@ -105,7 +105,7 @@ export default function Odwolanie() {
 
             {status === "error" && (
               <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">
-                Wystąpił błąd. Prosimy o kontakt bezpośrednio: <a href="mailto:info@sprintpmc.com" className="underline">info@sprintpmc.com</a>
+                Wystąpił błąd. Prosimy o kontakt bezpośrednio: <a href="mailto:contact@sprintpmc.com" className="underline">contact@sprintpmc.com</a>
               </div>
             )}
 
