@@ -25,7 +25,7 @@ export const translations = {
       ],
     },
     services: {
-      title: "Co automatyzuję",
+      title: "Co automatyzujemy",
       subtitle: "Kompleksowe rozwiązania AI dla Twojego biznesu",
       items: [
         {
