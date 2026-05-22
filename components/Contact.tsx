@@ -6,7 +6,7 @@ import { useLang } from "./LanguageProvider";
 
 // Klucz Web3Forms — zarejestruj się bezpłatnie na web3forms.com
 // Podaj swój email → dostaniesz klucz → wklej poniżej
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "08a612be-08ba-41d2-bace-f0b507453c1e";
 
 export default function Contact() {
   const { t } = useLang();

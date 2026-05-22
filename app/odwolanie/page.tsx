@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import Link from "next/link";
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "08a612be-08ba-41d2-bace-f0b507453c1e";
 
 export default function Odwolanie() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
