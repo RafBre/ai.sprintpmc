@@ -2,16 +2,26 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Check, ChevronRight } from "lucide-react";
+import { ArrowLeft, Check, ChevronRight, Zap, Network, MessageSquare, BarChart3, Send, RefreshCw } from "lucide-react";
 import { LanguageProvider, useLang } from "@/components/LanguageProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { servicesData } from "@/lib/servicesData";
 import { use } from "react";
 
+const serviceIcons = [
+  <Zap key={0} size={36} className="text-white" strokeWidth={2} />,
+  <Network key={1} size={36} className="text-white" strokeWidth={2} />,
+  <MessageSquare key={2} size={36} className="text-white" strokeWidth={2} />,
+  <BarChart3 key={3} size={36} className="text-white" strokeWidth={2} />,
+  <Send key={4} size={36} className="text-white" strokeWidth={2} />,
+  <RefreshCw key={5} size={36} className="text-white" strokeWidth={2} />,
+];
+
 function ServiceContent({ slug }: { slug: string }) {
   const { lang, t } = useLang();
-  const service = servicesData.find((s) => s.slug === slug);
+  const idx = servicesData.findIndex((s) => s.slug === slug);
+  const service = servicesData[idx];
   if (!service) return notFound();
 
   const L = lang === "pl" ? "pl" : "en";
@@ -33,10 +43,8 @@ function ServiceContent({ slug }: { slug: string }) {
               {lang === "pl" ? "Wróć do usług" : "Back to services"}
             </Link>
             <div className="flex items-start gap-6">
-              <div
-                className={`flex-shrink-0 w-20 h-20 rounded-3xl bg-gradient-to-br ${service.gradient} shadow-xl flex items-center justify-center text-4xl`}
-              >
-                {service.icon}
+              <div className={`flex-shrink-0 w-20 h-20 rounded-3xl bg-gradient-to-br ${service.gradient} shadow-xl flex items-center justify-center`}>
+                {serviceIcons[idx]}
               </div>
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -64,7 +72,7 @@ function ServiceContent({ slug }: { slug: string }) {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-          {/* Description */}
+          {/* Description + sidebar */}
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-6">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -78,24 +86,19 @@ function ServiceContent({ slug }: { slug: string }) {
             {/* Technologies sidebar */}
             <div className="lg:col-span-1">
               <div className="bg-slate-900 rounded-2xl p-6 sticky top-24">
-                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
                   {lang === "pl" ? "Technologie" : "Technologies"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {service.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 text-slate-300"
-                    >
+                    <span key={i} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 text-slate-300">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="mt-6 pt-6 border-t border-white/10">
                   <p className="text-slate-400 text-xs mb-4">
-                    {lang === "pl"
-                      ? "Gotowi omówić Wasz przypadek?"
-                      : "Ready to discuss your case?"}
+                    {lang === "pl" ? "Gotowi omówić Wasz przypadek?" : "Ready to discuss your case?"}
                   </p>
                   <Link
                     href="/#kontakt"
@@ -115,10 +118,7 @@ function ServiceContent({ slug }: { slug: string }) {
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {service.benefits[L].map((benefit, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-sm transition-all"
-                >
+                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-sm transition-all">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center mt-0.5">
                     <Check size={12} className="text-indigo-500" />
                   </div>
@@ -135,10 +135,7 @@ function ServiceContent({ slug }: { slug: string }) {
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {service.useCases[L].map((uc, i) => (
-                <div
-                  key={i}
-                  className="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-indigo-50/50 border border-indigo-100"
-                >
+                <div key={i} className="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-indigo-50/50 border border-indigo-100">
                   <div className="text-indigo-400 text-2xl font-black mb-2">
                     {String(i + 1).padStart(2, "0")}
                   </div>
@@ -151,9 +148,7 @@ function ServiceContent({ slug }: { slug: string }) {
           {/* CTA */}
           <div className="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-3xl p-10 text-center">
             <h2 className="text-2xl font-bold text-white mb-3">
-              {lang === "pl"
-                ? "Zacznijmy od bezpłatnej konsultacji"
-                : "Let's start with a free consultation"}
+              {lang === "pl" ? "Zacznijmy od bezpłatnej konsultacji" : "Let's start with a free consultation"}
             </h2>
             <p className="text-slate-400 mb-8 max-w-lg mx-auto">
               {lang === "pl"
@@ -175,11 +170,7 @@ function ServiceContent({ slug }: { slug: string }) {
   );
 }
 
-export default function ServicePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   return (
     <LanguageProvider>

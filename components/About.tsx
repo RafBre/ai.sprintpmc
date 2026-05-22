@@ -3,143 +3,114 @@
 import { Check } from "lucide-react";
 import { useLang } from "./LanguageProvider";
 
-function PersonFigure({
-  x,
-  delay,
-  label,
-  badge1,
-  badge2,
-  flip,
-}: {
-  x: number;
-  delay: string;
-  label: string;
-  badge1: string;
-  badge2: string;
-  flip?: boolean;
-}) {
-  const dir = flip ? -1 : 1;
+function AvatarIllustration() {
   return (
-    <g>
-      {/* Body float animation */}
-      <g>
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values={`${x},0; ${x},${-10 * dir}; ${x},0`}
-          dur="4s"
-          begin={delay}
-          repeatCount="indefinite"
-          additive="replace"
-        />
-        {/* Head */}
-        <circle cx="0" cy="0" r="22" fill="url(#headGrad)" />
-        {/* Neck */}
-        <rect x="-6" y="20" width="12" height="14" rx="4" fill="#4f46e5" />
-        {/* Body */}
-        <path d="M-30 34 Q-30 56 -24 80 L24 80 Q30 56 30 34 Q20 28 0 28 Q-20 28 -30 34Z" fill="url(#bodyGrad)" />
-        {/* Left arm */}
-        <path
-          d={flip ? "M-30 42 Q-55 50 -60 70" : "M-30 42 Q-50 60 -48 82"}
-          stroke="#6366f1" strokeWidth="8" strokeLinecap="round" fill="none"
-        />
-        {/* Right arm */}
-        <path
-          d={flip ? "M30 42 Q55 36 62 20" : "M30 42 Q50 60 48 82"}
-          stroke="#6366f1" strokeWidth="8" strokeLinecap="round" fill="none"
-        />
-        {/* Legs */}
-        <path d="M-16 80 Q-18 110 -14 130" stroke="#4338ca" strokeWidth="10" strokeLinecap="round" fill="none" />
-        <path d="M16 80 Q18 110 14 130" stroke="#4338ca" strokeWidth="10" strokeLinecap="round" fill="none" />
-        {/* Shoes */}
-        <ellipse cx="-14" cy="132" rx="12" ry="6" fill="#3730a3" />
-        <ellipse cx="14" cy="132" rx="12" ry="6" fill="#3730a3" />
-        {/* Laptop/pointing hand detail */}
-        {flip ? (
-          <path d="M44 16 L68 4 L70 8 L46 20Z" fill="#22d3ee" opacity="0.8" />
-        ) : (
-          <g>
-            <rect x="36" y="74" width="28" height="20" rx="3" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
-            <rect x="34" y="94" width="32" height="3" rx="1.5" fill="#4f46e5" />
-            <rect x="39" y="77" width="22" height="14" rx="2" fill="#312e81" opacity="0.8" />
-          </g>
-        )}
-        {/* Face features */}
-        <circle cx="-7" cy="-4" r="3" fill="white" opacity="0.9" />
-        <circle cx="7" cy="-4" r="3" fill="white" opacity="0.9" />
-        <circle cx="-6" cy="-3" r="1.5" fill="#312e81" />
-        <circle cx="8" cy="-3" r="1.5" fill="#312e81" />
-        <path d="M-6 8 Q0 12 6 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
-      </g>
-
-      {/* Floating badge 1 */}
-      <g transform={`translate(${x + (flip ? -110 : 60)}, -60)`}>
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values={`${x + (flip ? -110 : 60)},-60; ${x + (flip ? -110 : 60)},-72; ${x + (flip ? -110 : 60)},-60`}
-          dur="3s"
-          begin={delay}
-          repeatCount="indefinite"
-        />
-        <rect x="0" y="0" width="80" height="26" rx="13" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
-        <text x="40" y="17" textAnchor="middle" fill="#a5b4fc" fontSize="10" fontWeight="600">{badge1}</text>
-      </g>
-
-      {/* Floating badge 2 */}
-      <g transform={`translate(${x + (flip ? 30 : -90)}, 80)`}>
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values={`${x + (flip ? 30 : -90)},80; ${x + (flip ? 30 : -90)},92; ${x + (flip ? 30 : -90)},80`}
-          dur="3.5s"
-          begin={`${parseFloat(delay) + 0.5}s`}
-          repeatCount="indefinite"
-        />
-        <rect x="0" y="0" width="76" height="26" rx="13" fill="#1e1b4b" stroke="#22d3ee" strokeWidth="1" />
-        <text x="38" y="17" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="600">{badge2}</text>
-      </g>
-
-      {/* Name label */}
-      <text x={x} y="165" textAnchor="middle" fill="#6b7280" fontSize="11" fontWeight="500">{label}</text>
-    </g>
-  );
-}
-
-function TwoFiguresSVG() {
-  return (
-    <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
+    <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
       <defs>
-        <linearGradient id="headGrad" x1="0" y1="-22" x2="0" y2="22" gradientUnits="userSpaceOnUse">
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#4f46e5" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="avatarHead" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#818cf8" />
           <stop offset="100%" stopColor="#6366f1" />
         </linearGradient>
-        <linearGradient id="bodyGrad" x1="-30" y1="28" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+        <linearGradient id="avatarBody" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#6366f1" />
           <stop offset="100%" stopColor="#4338ca" />
         </linearGradient>
+        <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#312e81" />
+          <stop offset="100%" stopColor="#1e1b4b" />
+        </linearGradient>
       </defs>
 
+      {/* Background glow */}
+      <circle cx="170" cy="170" r="130" fill="url(#bgGlow)" />
+
+      {/* Orbit ring */}
+      <ellipse cx="170" cy="185" rx="110" ry="30" stroke="#6366f1" strokeWidth="1" strokeDasharray="4 6" opacity="0.25" />
+
       {/* Ground shadow */}
-      <ellipse cx="130" cy="205" rx="45" ry="6" fill="#6366f1" opacity="0.1" />
-      <ellipse cx="270" cy="205" rx="45" ry="6" fill="#6366f1" opacity="0.1" />
+      <ellipse cx="170" cy="272" rx="52" ry="8" fill="#6366f1" opacity="0.12" />
 
-      {/* Person 1 — with laptop, left */}
-      <PersonFigure x={130} delay="0s" label="AI Engineer" badge1="Python" badge2="Make.com" />
+      {/* Person — floats up and down */}
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="4s" repeatCount="indefinite" />
 
-      {/* Person 2 — pointing up, right */}
-      <PersonFigure x={270} delay="1.5s" label="AI Strategist" badge1="GPT-4o" badge2="n8n" flip />
+        {/* Head */}
+        <circle cx="170" cy="100" r="30" fill="url(#avatarHead)" />
 
-      {/* Connection arc between them */}
-      <path d="M160 60 Q200 30 240 60" stroke="#6366f1" strokeWidth="1" strokeDasharray="4 4" fill="none" opacity="0.4">
-        <animate attributeName="stroke-dashoffset" values="0;-16" dur="2s" repeatCount="indefinite" />
-      </path>
+        {/* Face */}
+        <circle cx="161" cy="97" r="4" fill="white" opacity="0.9" />
+        <circle cx="179" cy="97" r="4" fill="white" opacity="0.9" />
+        <circle cx="162" cy="98" r="2" fill="#312e81" />
+        <circle cx="180" cy="98" r="2" fill="#312e81" />
+        <path d="M163 110 Q170 116 177 110" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.8" />
 
-      {/* Center spark */}
-      <circle cx="200" cy="44" r="5" fill="#22d3ee" opacity="0.7">
-        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
-      </circle>
+        {/* Neck */}
+        <rect x="163" y="128" width="14" height="14" rx="4" fill="#4f46e5" />
+
+        {/* Body */}
+        <path d="M135 142 Q132 170 135 200 L205 200 Q208 170 205 142 Q192 136 170 136 Q148 136 135 142Z" fill="url(#avatarBody)" />
+
+        {/* Left arm */}
+        <path d="M137 150 Q115 168 112 195" stroke="#6366f1" strokeWidth="10" strokeLinecap="round" fill="none" />
+
+        {/* Right arm — holding laptop */}
+        <path d="M203 150 Q225 165 228 190" stroke="#6366f1" strokeWidth="10" strokeLinecap="round" fill="none" />
+
+        {/* Laptop */}
+        <rect x="218" y="182" width="34" height="22" rx="3" fill="url(#screenGrad)" stroke="#6366f1" strokeWidth="1" />
+        <rect x="215" y="204" width="40" height="4" rx="2" fill="#4338ca" />
+        <rect x="221" y="185" width="28" height="16" rx="2" fill="#312e81" opacity="0.8" />
+        {/* Screen glow lines */}
+        <rect x="223" y="188" width="14" height="1.5" rx="0.75" fill="#818cf8" opacity="0.7" />
+        <rect x="223" y="192" width="10" height="1.5" rx="0.75" fill="#818cf8" opacity="0.5" />
+        <rect x="223" y="196" width="18" height="1.5" rx="0.75" fill="#22d3ee" opacity="0.6" />
+
+        {/* Legs */}
+        <path d="M155 200 Q152 232 154 258" stroke="#4338ca" strokeWidth="12" strokeLinecap="round" fill="none" />
+        <path d="M185 200 Q188 232 186 258" stroke="#4338ca" strokeWidth="12" strokeLinecap="round" fill="none" />
+
+        {/* Shoes */}
+        <ellipse cx="154" cy="260" rx="14" ry="7" fill="#3730a3" />
+        <ellipse cx="186" cy="260" rx="14" ry="7" fill="#3730a3" />
+      </g>
+
+      {/* Badge: n8n — top left, slow float */}
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="3.2s" begin="0s" repeatCount="indefinite" />
+        <rect x="28" y="80" width="68" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
+        <text x="62" y="98" textAnchor="middle" fill="#a5b4fc" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif">n8n</text>
+      </g>
+
+      {/* Badge: Python — bottom left, slower float */}
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,8; 0,0" dur="4s" begin="0.5s" repeatCount="indefinite" />
+        <rect x="18" y="200" width="80" height="28" rx="14" fill="#1e1b4b" stroke="#22d3ee" strokeWidth="1" />
+        <text x="58" y="218" textAnchor="middle" fill="#67e8f9" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif">Python</text>
+      </g>
+
+      {/* Badge: OpenAI — top right, medium float */}
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="3.6s" begin="1s" repeatCount="indefinite" />
+        <rect x="234" y="68" width="80" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" strokeWidth="1" />
+        <text x="274" y="86" textAnchor="middle" fill="#a5b4fc" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif">OpenAI</text>
+      </g>
+
+      {/* Badge: Claude AI — bottom right, slow float */}
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,7; 0,0" dur="4.4s" begin="1.5s" repeatCount="indefinite" />
+        <rect x="230" y="208" width="86" height="28" rx="14" fill="#1e1b4b" stroke="#22d3ee" strokeWidth="1" />
+        <text x="273" y="226" textAnchor="middle" fill="#67e8f9" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif">Claude AI</text>
+      </g>
+
+      {/* Connecting dotted lines from badges to person */}
+      <line x1="96" y1="94" x2="142" y2="104" stroke="#6366f1" strokeWidth="1" strokeDasharray="3 4" opacity="0.3" />
+      <line x1="96" y1="214" x2="138" y2="195" stroke="#22d3ee" strokeWidth="1" strokeDasharray="3 4" opacity="0.3" />
+      <line x1="234" y1="82" x2="198" y2="104" stroke="#6366f1" strokeWidth="1" strokeDasharray="3 4" opacity="0.3" />
+      <line x1="232" y1="222" x2="200" y2="195" stroke="#22d3ee" strokeWidth="1" strokeDasharray="3 4" opacity="0.3" />
     </svg>
   );
 }
@@ -155,10 +126,10 @@ export default function About() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Two animated figures */}
+          {/* Single animated figure */}
           <div className="flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-sm h-72">
-              <TwoFiguresSVG />
+            <div className="relative w-full max-w-sm h-80">
+              <AvatarIllustration />
             </div>
           </div>
 
