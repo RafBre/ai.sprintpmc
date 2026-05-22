@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Mail, MapPin, CircleDot, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useLang } from "./LanguageProvider";
 
 // Klucz Web3Forms — zarejestruj się bezpłatnie na web3forms.com
@@ -106,15 +106,6 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                <CircleDot size={18} className="text-emerald-400" />
-              </div>
-              <div>
-                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Status</p>
-                <p className="text-emerald-400 font-medium">{t.contact.info.available}</p>
-              </div>
-            </div>
           </div>
 
           {/* Form */}
