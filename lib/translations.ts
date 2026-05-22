@@ -128,27 +128,27 @@ export const translations = {
       categories: [
         {
           name: "Automatyzacja",
-          tools: ["n8n", "Make.com", "Zapier", "Power Automate"],
+          tools: ["n8n", "Make.com", "Zapier", "Power Automate", "Activepieces", "Pipedream", "UiPath", "Selenium"],
         },
         {
           name: "Modele AI",
-          tools: ["OpenAI GPT-4o", "Claude Anthropic", "Google Gemini", "Llama 3"],
+          tools: ["OpenAI GPT-4o", "Claude Anthropic", "Google Gemini", "Llama 3", "Mistral AI", "Groq", "Hugging Face", "ElevenLabs", "Whisper"],
         },
         {
           name: "Integracje",
-          tools: ["REST API", "Webhooks", "GraphQL", "OAuth 2.0"],
+          tools: ["REST API", "Webhooks", "GraphQL", "OAuth 2.0", "gRPC", "Kafka", "RabbitMQ", "AWS SQS"],
         },
         {
           name: "Bazy danych",
-          tools: ["Airtable", "Notion", "Supabase", "PostgreSQL"],
+          tools: ["Airtable", "Notion", "Supabase", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Pinecone", "Google Sheets"],
         },
         {
           name: "Komunikacja",
-          tools: ["Slack", "MS Teams", "Email", "WhatsApp API"],
+          tools: ["Slack", "MS Teams", "Email", "WhatsApp API", "Telegram", "Discord", "Twilio", "Intercom"],
         },
         {
           name: "Programowanie",
-          tools: ["Python", "Node.js", "TypeScript", "FastAPI"],
+          tools: ["Python", "Node.js", "TypeScript", "FastAPI", "LangChain", "LlamaIndex", "Docker", "AWS Lambda"],
         },
       ],
     },
@@ -308,27 +308,27 @@ export const translations = {
       categories: [
         {
           name: "Automation",
-          tools: ["n8n", "Make.com", "Zapier", "Power Automate"],
+          tools: ["n8n", "Make.com", "Zapier", "Power Automate", "Activepieces", "Pipedream", "UiPath", "Selenium"],
         },
         {
           name: "AI Models",
-          tools: ["OpenAI GPT-4o", "Claude Anthropic", "Google Gemini", "Llama 3"],
+          tools: ["OpenAI GPT-4o", "Claude Anthropic", "Google Gemini", "Llama 3", "Mistral AI", "Groq", "Hugging Face", "ElevenLabs", "Whisper"],
         },
         {
           name: "Integrations",
-          tools: ["REST API", "Webhooks", "GraphQL", "OAuth 2.0"],
+          tools: ["REST API", "Webhooks", "GraphQL", "OAuth 2.0", "gRPC", "Kafka", "RabbitMQ", "AWS SQS"],
         },
         {
           name: "Databases",
-          tools: ["Airtable", "Notion", "Supabase", "PostgreSQL"],
+          tools: ["Airtable", "Notion", "Supabase", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Pinecone", "Google Sheets"],
         },
         {
           name: "Communication",
-          tools: ["Slack", "MS Teams", "Email", "WhatsApp API"],
+          tools: ["Slack", "MS Teams", "Email", "WhatsApp API", "Telegram", "Discord", "Twilio", "Intercom"],
         },
         {
           name: "Programming",
-          tools: ["Python", "Node.js", "TypeScript", "FastAPI"],
+          tools: ["Python", "Node.js", "TypeScript", "FastAPI", "LangChain", "LlamaIndex", "Docker", "AWS Lambda"],
         },
       ],
     },
