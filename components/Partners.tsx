@@ -58,6 +58,76 @@ const partners = [
       </svg>
     ),
   },
+  {
+    name: "Make.com",
+    svg: (
+      <svg viewBox="0 0 100 36" fill="none" className="h-9">
+        <circle cx="10" cy="18" r="5" fill="currentColor" opacity="0.8" />
+        <circle cx="26" cy="18" r="5" fill="currentColor" opacity="0.8" />
+        <path d="M15 18 H21" stroke="currentColor" strokeWidth="2" />
+        <text x="38" y="24" fontSize="14" fontWeight="700" fontFamily="Arial, sans-serif" fill="currentColor">Make</text>
+      </svg>
+    ),
+  },
+  {
+    name: "HubSpot",
+    svg: (
+      <svg viewBox="0 0 110 36" fill="none" className="h-9">
+        <circle cx="16" cy="14" r="5" fill="currentColor" opacity="0.8" />
+        <path d="M16 19 L16 28 M10 24 L22 24 M16 9 L16 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <text x="30" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">HubSpot</text>
+      </svg>
+    ),
+  },
+  {
+    name: "Zapier",
+    svg: (
+      <svg viewBox="0 0 90 36" fill="none" className="h-9">
+        <path d="M8 10 H24 L8 26 H24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <text x="32" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">Zapier</text>
+      </svg>
+    ),
+  },
+  {
+    name: "Slack",
+    svg: (
+      <svg viewBox="0 0 85 36" fill="none" className="h-9">
+        <rect x="5" y="10" width="5" height="12" rx="2.5" fill="currentColor" opacity="0.5" />
+        <rect x="14" y="10" width="5" height="12" rx="2.5" fill="currentColor" opacity="0.8" />
+        <rect x="5" y="16" width="14" height="5" rx="2.5" fill="currentColor" opacity="0.6" />
+        <text x="26" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">Slack</text>
+      </svg>
+    ),
+  },
+  {
+    name: "Vercel",
+    svg: (
+      <svg viewBox="0 0 90 36" fill="none" className="h-9">
+        <path d="M16 8 L28 28 L4 28 Z" fill="currentColor" />
+        <text x="36" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">Vercel</text>
+      </svg>
+    ),
+  },
+  {
+    name: "Stripe",
+    svg: (
+      <svg viewBox="0 0 80 36" fill="none" className="h-9">
+        <rect x="5" y="5" width="22" height="26" rx="4" fill="currentColor" opacity="0.15" />
+        <path d="M11 16 C11 13 20 12 20 16 C20 20 11 19 11 23 C11 27 20 26 20 23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+        <text x="32" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">Stripe</text>
+      </svg>
+    ),
+  },
+  {
+    name: "MongoDB",
+    svg: (
+      <svg viewBox="0 0 105 36" fill="none" className="h-9">
+        <path d="M16 5 C16 5 9 12 9 20 C9 26 12 30 16 31 C20 30 23 26 23 20 C23 12 16 5 16 5Z" fill="currentColor" opacity="0.7" />
+        <path d="M16 28 L16 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <text x="30" y="24" fontSize="14" fontWeight="600" fontFamily="Arial, sans-serif" fill="currentColor">MongoDB</text>
+      </svg>
+    ),
+  },
 ];
 
 export default function Partners() {
