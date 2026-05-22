@@ -54,7 +54,7 @@ export const translations = {
           gradient: "from-cyan-500 to-teal-500",
           title: "Analiza danych z AI",
           description:
-            "Automatyczne raporty, predykcje trendów i wgląd w dane biznesowe w czasie rzeczywistym — bez udziału analityka.",
+            "Automatyczne raporty, predykcje trendów i wgląd w dane biznesowe w czasie rzeczywistym - bez udziału analityka.",
         },
         {
           icon: "📧",
@@ -86,7 +86,7 @@ export const translations = {
         "Pełne wdrożenie, testy i szkolenie zespołu",
         "Wsparcie techniczne po wdrożeniu",
       ],
-      imageAlt: "Rafał Breński — AI Automation Expert",
+      imageAlt: "Rafał Breński - AI Automation Expert",
     },
     howItWorks: {
       title: "Jak działamy",
@@ -170,7 +170,7 @@ export const translations = {
       },
       info: {
         email: "contact@sprintpmc.com",
-        location: "Polska — praca zdalna",
+        location: "Polska - praca zdalna",
         available: "Dostępny do nowych projektów",
       },
     },
@@ -234,7 +234,7 @@ export const translations = {
           gradient: "from-cyan-500 to-teal-500",
           title: "AI Data Analysis",
           description:
-            "Automated reports, trend predictions, and real-time business data insights — no analyst required.",
+            "Automated reports, trend predictions, and real-time business data insights - no analyst required.",
         },
         {
           icon: "📧",
@@ -266,7 +266,7 @@ export const translations = {
         "Full implementation, testing and team training",
         "Technical support after deployment",
       ],
-      imageAlt: "Rafał Breński — AI Automation Expert",
+      imageAlt: "Rafał Breński - AI Automation Expert",
     },
     howItWorks: {
       title: "How we work",
@@ -350,7 +350,7 @@ export const translations = {
       },
       info: {
         email: "contact@sprintpmc.com",
-        location: "Poland — remote work",
+        location: "Poland - remote work",
         available: "Available for new projects",
       },
     },

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Polityka prywatności — SprintPMC",
+  title: "Polityka prywatności - SprintPMC",
   robots: { index: false },
 };
 
@@ -28,10 +28,10 @@ export default function PolitykaPrywatnosci() {
             <h2 className="text-xl font-bold text-slate-900 mb-3">2. Cel i podstawa prawna przetwarzania</h2>
             <p>Dane osobowe przetwarzamy w następujących celach:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li><strong>Odpowiedź na wiadomości i zapytania</strong> — podstawa prawna: art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes).</li>
-              <li><strong>Realizacja umowy lub podjęcie działań przed jej zawarciem</strong> — podstawa prawna: art. 6 ust. 1 lit. b RODO.</li>
-              <li><strong>Wypełnienie obowiązków prawnych</strong> — podstawa prawna: art. 6 ust. 1 lit. c RODO.</li>
-              <li><strong>Marketing usług własnych</strong> — podstawa prawna: art. 6 ust. 1 lit. f RODO lub zgoda (art. 6 ust. 1 lit. a RODO).</li>
+              <li><strong>Odpowiedź na wiadomości i zapytania</strong> - podstawa prawna: art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes).</li>
+              <li><strong>Realizacja umowy lub podjęcie działań przed jej zawarciem</strong> - podstawa prawna: art. 6 ust. 1 lit. b RODO.</li>
+              <li><strong>Wypełnienie obowiązków prawnych</strong> - podstawa prawna: art. 6 ust. 1 lit. c RODO.</li>
+              <li><strong>Marketing usług własnych</strong> - podstawa prawna: art. 6 ust. 1 lit. f RODO lub zgoda (art. 6 ust. 1 lit. a RODO).</li>
             </ul>
           </section>
 
@@ -50,9 +50,9 @@ export default function PolitykaPrywatnosci() {
             <h2 className="text-xl font-bold text-slate-900 mb-3">4. Odbiorcy danych</h2>
             <p>Dane mogą być przekazywane następującym kategoriom odbiorców:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li><strong>Resend Inc.</strong> — dostawca usług poczty elektronicznej (USA; transfer na podstawie standardowych klauzul umownych).</li>
-              <li><strong>Vercel Inc.</strong> — dostawca hostingu aplikacji (USA; transfer na podstawie standardowych klauzul umownych).</li>
-              <li>Organy publiczne — gdy wymaga tego prawo.</li>
+              <li><strong>Resend Inc.</strong> - dostawca usług poczty elektronicznej (USA; transfer na podstawie standardowych klauzul umownych).</li>
+              <li><strong>Vercel Inc.</strong> - dostawca hostingu aplikacji (USA; transfer na podstawie standardowych klauzul umownych).</li>
+              <li>Organy publiczne - gdy wymaga tego prawo.</li>
             </ul>
           </section>
 
@@ -60,9 +60,9 @@ export default function PolitykaPrywatnosci() {
             <h2 className="text-xl font-bold text-slate-900 mb-3">5. Okres przechowywania danych</h2>
             <p>Dane przechowujemy przez okres niezbędny do realizacji celu, w którym zostały zebrane:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>dane kontaktowe z formularza — do 3 lat od ostatniego kontaktu,</li>
-              <li>dane związane z umową — przez okres wymagany przepisami prawa (co najmniej 5 lat),</li>
-              <li>dane marketingowe — do czasu cofnięcia zgody lub wniesienia sprzeciwu.</li>
+              <li>dane kontaktowe z formularza - do 3 lat od ostatniego kontaktu,</li>
+              <li>dane związane z umową - przez okres wymagany przepisami prawa (co najmniej 5 lat),</li>
+              <li>dane marketingowe - do czasu cofnięcia zgody lub wniesienia sprzeciwu.</li>
             </ul>
           </section>
 

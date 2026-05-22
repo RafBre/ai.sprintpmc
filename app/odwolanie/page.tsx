@@ -18,7 +18,7 @@ export default function Odwolanie() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `[RODO] ${form.type === "withdrawal" ? "Odwołanie zgody" : "Sprzeciw"} — ${form.name}`,
+          subject: `[RODO] ${form.type === "withdrawal" ? "Odwołanie zgody" : "Sprzeciw"} - ${form.name}`,
           from_name: "SprintPMC RODO",
           name: form.name,
           email: form.email,

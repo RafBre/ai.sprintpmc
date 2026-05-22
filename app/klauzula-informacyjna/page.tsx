@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Klauzula informacyjna RODO — SprintPMC",
+  title: "Klauzula informacyjna RODO - SprintPMC",
   robots: { index: false },
 };
 
@@ -36,10 +36,10 @@ export default function KlauzulaInformacyjna() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Cel przetwarzania i podstawa prawna</p>
             <ul className="space-y-2 text-sm">
-              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Odpowiedź na zapytanie — art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes)</li>
-              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Realizacja umowy — art. 6 ust. 1 lit. b RODO</li>
-              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Obowiązki prawne — art. 6 ust. 1 lit. c RODO</li>
-              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Marketing (za zgodą) — art. 6 ust. 1 lit. a RODO</li>
+              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Odpowiedź na zapytanie - art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes)</li>
+              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Realizacja umowy - art. 6 ust. 1 lit. b RODO</li>
+              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Obowiązki prawne - art. 6 ust. 1 lit. c RODO</li>
+              <li className="flex gap-2"><span className="text-indigo-500 font-bold">→</span> Marketing (za zgodą) - art. 6 ust. 1 lit. a RODO</li>
             </ul>
           </div>
 
